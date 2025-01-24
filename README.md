@@ -19,10 +19,6 @@ This project is an interactive, multi-page web application designed to monitor t
    - Adapts seamlessly to various screen sizes using Bootstrap's grid system and responsive utilities.
 
 ### Upcoming Enhancements:
-2. **Enhanced Design and Visual Appeal**:
-   - **Custom Themes**: Utilize Bootstrap’s SCSS variables to create a corporate or modern aesthetic theme.
-   - **Icons and Images**: Add professional icons, illustrations, or background images.
-   - **Dark Mode**: Implement a toggle for dark mode.
 
 3. **Extended Features**:
    - **Search and Sort**: Add search and sorting functionality for the server table.
