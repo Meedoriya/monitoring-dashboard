@@ -17,27 +17,27 @@ This project is an interactive, multi-page web application designed to monitor t
 
 3. **Responsive Design**:
    - Adapts seamlessly to various screen sizes using Bootstrap's grid system and responsive utilities.
-
-### Upcoming Enhancements:
-
-3. **Extended Features**:
+   
+4. **Extended Features**:
    - **Search and Sort**: Add search and sorting functionality for the server table.
    - **Filtering**: Allow filtering servers by status (e.g., "All," "OK," "Error").
    - **Export Options**: Enable exporting the server table to CSV format.
 
-4. **Integration and Real-World Simulation**:
+5. **Integration and Real-World Simulation**:
    - **Data Fetching**: Connect the app to a mock API for dynamic data retrieval.
    - **Feedback Storage**: Simulate storing contact form submissions in localStorage or sending to an API.
 
-5. **Additional Pages and Content**:
+6. **Additional Pages and Content**:
    - **About Page**: Explain the application's purpose and features.
    - **User Guide**: Add a step-by-step guide with screenshots.
    - **Analytics Dashboard**: Visualize server trends using charts (e.g., bar, pie, line).
 
-6. **Advanced Interactivity**:
+7. **Advanced Interactivity**:
    - **Real-Time Notifications**: Notify users of server status changes.
    - **Live Chat**: Add a chat widget for support.
    - **Form Feedback Animation**: Enhance form submission feedback with animations.
+
+### Upcoming Enhancements:
 
 7. **Usability and Accessibility**:
    - **Mobile-First Design**: Ensure every element is optimized for smaller screens.
