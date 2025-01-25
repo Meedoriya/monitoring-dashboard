@@ -35,46 +35,115 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contacts</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+
     <!-- Details Section -->
     <div class="container my-5">
         <h2 class="mb-4">Details of servers</h2>
-        <table class="table table-striped table-bordered">
+
+        <!-- Filters and Search -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <select id="statusFilter" class="form-select">
+                    <option value="all">All</option>
+                    <option value="ok">OK</option>
+                    <option value="error">Error</option>
+                </select>
+            </div>
+            <input type="text" id="searchInput" class="form-control w-25" placeholder="Search servers...">
+        </div>
+
+        <!-- Table -->
+        <table class="table table-striped table-bordered" id="serverTable">
             <thead class="table-light">
                 <tr>
-                    <th>Name of servers</th>
-                    <th>IP-address</th>
-                    <th>Status</th>
+                    <th onclick="sortTable(0)">Name of servers <i class="fas fa-sort"></i></th>
+                    <th onclick="sortTable(1)">IP-address <i class="fas fa-sort"></i></th>
+                    <th onclick="sortTable(2)">Status <i class="fas fa-sort"></i></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr data-status="ok">
                     <td>Server 1</td>
                     <td>192.168.0.1</td>
                     <td><i class="fas fa-check-circle text-success"></i> Fine</td>
                 </tr>
-                <tr>
+                <tr data-status="error">
                     <td>Server 2</td>
                     <td>192.168.0.2</td>
-                    <td>
-                        <i class="fas fa-exclamation-triangle text-warning"></i> Error
-                    </td>
+                    <td><i class="fas fa-exclamation-triangle text-warning"></i> Error</td>
                 </tr>
-                <tr>
+                <tr data-status="ok">
                     <td>Server 3</td>
                     <td>192.168.0.3</td>
                     <td><i class="fas fa-times-circle text-danger"></i> Unavailable</td>
                 </tr>
             </tbody>
         </table>
+        <!-- Export Button -->
+        <button class="btn btn-primary" id="exportBtn">Export to CSV</button>
     </div>
+
+    <footer class="text-center py-3 bg-light">
+        <p class="mb-0">&copy; 2025 IT Monitoring. All rights reserved.</p>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sorting Function
+        function sortTable(columnIndex) {
+            const table = document.getElementById("serverTable");
+            const rows = Array.from(table.rows).slice(1);
+            const isAsc = table.rows[0].cells[columnIndex].classList.toggle("asc");
+            rows.sort((rowA, rowB) => {
+                const cellA = rowA.cells[columnIndex].innerText.toLowerCase();
+                const cellB = rowB.cells[columnIndex].innerText.toLowerCase();
+                return isAsc ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            });
+            rows.forEach(row => table.tBodies[0].appendChild(row));
+        }
+
+        // Filtering Function
+        document.getElementById("statusFilter").addEventListener("change", function () {
+            const filterValue = this.value;
+            const rows = document.querySelectorAll("#serverTable tbody tr");
+            rows.forEach(row => {
+                row.style.display = (filterValue === "all" || row.dataset.status === filterValue) ? "" : "none";
+            });
+        });
+
+        // Search Function
+        document.getElementById("searchInput").addEventListener("input", function () {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll("#serverTable tbody tr");
+            rows.forEach(row => {
+                row.style.display = row.innerText.toLowerCase().includes(searchValue) ? "" : "none";
+            });
+        });
+
+        // Export to CSV Function
+        document.getElementById("exportBtn").addEventListener("click", function () {
+            const rows = document.querySelectorAll("#serverTable tr");
+            const csvContent = Array.from(rows).map(row =>
+                Array.from(row.cells).map(cell => cell.innerText).join(",")
+            ).join("\n");
+
+            const blob = new Blob([csvContent], { type: "text/csv" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "servers.csv";
+            a.click();
+        });
+    </script>
 </body>
 
 </html>
