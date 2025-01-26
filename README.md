@@ -17,7 +17,7 @@ This project is an interactive, multi-page web application designed to monitor t
 
 3. **Responsive Design**:
    - Adapts seamlessly to various screen sizes using Bootstrap's grid system and responsive utilities.
-   
+
 4. **Extended Features**:
    - **Search and Sort**: Add search and sorting functionality for the server table.
    - **Filtering**: Allow filtering servers by status (e.g., "All," "OK," "Error").
@@ -37,27 +37,15 @@ This project is an interactive, multi-page web application designed to monitor t
    - **Live Chat**: Add a chat widget for support.
    - **Form Feedback Animation**: Enhance form submission feedback with animations.
 
-### Upcoming Enhancements:
-
-7. **Usability and Accessibility**:
+8. **Styling Improvements**:
+   - Added gradient backgrounds and hover animations for cards.
+   - Enhanced form focus styles and modal aesthetics.
+   - Introduced consistent design language across all pages.
    - **Mobile-First Design**: Ensure every element is optimized for smaller screens.
-   - **Accessibility Improvements**: Add ARIA roles, keyboard navigation, and focus management.
-   - **Language Switcher**: Allow toggling between multiple languages.
 
-8. **Deployment**:
+9. **Deployment**:
    - Deploy the application using Netlify or GitHub Pages.
    - Use a custom domain for a professional look.
-
-## Project Structure
-```
-/project-folder
-├── index.html         # Home Page
-├── details.html       # Details Page
-├── contact.html       # Contact Page
-├── css/
-│   └── style.css      # Custom styles
-└── assets/            # Images and additional assets (if needed)
-```
 
 ## How to Use
 1. Clone the repository and open the project in your preferred text editor or IDE.
@@ -97,6 +85,16 @@ This project is an interactive, multi-page web application designed to monitor t
   - Message.
 - Displays a loading spinner upon form submission.
 - Alerts the user upon successful submission.
+
+### 4. Notifications Section
+- Displays the latest updates or alerts with categorized cards:
+  - **System Update**: Status of general updates.
+  - **Scheduled Maintenance**: Upcoming maintenance information.
+  - **New Features**: Introduced features or changes.
+
+### 5. Footer
+- Includes links to social media and copyright information.
+- Styled with a modern and professional appearance.
 
 ## How to Contribute
 1. Fork the repository.
