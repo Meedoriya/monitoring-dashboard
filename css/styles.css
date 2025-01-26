@@ -1,53 +1,78 @@
 body {
-    background-color: #ffffff;
-    color: #000000;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  .hero-section {
-    background-color: #007bff;
-    color: white;
-    padding: 50px 0;
-    text-align: center;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .card-body {
-    text-align: left;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-  
-  .spinner {
-    display: none;
-    margin: 20px auto;
-    width: 3rem;
-    height: 3rem;
-    border: 0.3rem solid rgba(0, 0, 0, 0.1);
-    border-top: 0.3rem solid #007bff;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.hero-section {
+  background-color: #007bff;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.spinner {
+  display: none;
+  margin: 20px auto;
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid rgba(0, 0, 0, 0.1);
+  border-top: 0.3rem solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
       transform: rotate(0deg);
-    }
-  
-    100% {
+  }
+
+  100% {
       transform: rotate(360deg);
-    }
   }
-  
-  .button:hover {
-    background-color: #0056b3;
-    color: white;
-  }
-  
+}
+
+.button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 12px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.modal-content {
+  border-radius: 12px;
+}
+
+#contactForm {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
